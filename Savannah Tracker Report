@@ -166,3 +166,10 @@ P — Parameters	symptom, shw_available, clinic_distance_km, time	Enables correc
 
 Key Improvement: The original prompt produces one-size advice that either causes panic ("go to hospital immediately") or false reassurance. The Verifier Pattern ensures the AI gathers symptom data before advising, while Chain-of-Thought enforces a severity ladder that routes to shw first — the realistic, affordable, and culturally trusted patshway for 70% of users.
 
+Reflection
+Before this exercise, AI felt like a tool for generating content — you ask, it answers. 
+Precision prompting reframes that completely. 
+In healthcare, especially for under-resourced communities, the AI is not the expert: it is the bridge between a frightened mother and the right resource. 
+The AIM and MAP frameworks enforce something critical — that the designer must do the contextual thinking before the model does anything. 
+Specifying CHW names, local foods, transport constraints, and SMS character limits is not micro-management; it is the ethical scaffolding that prevents generic outputs from causing genuine harm. 
+Chain-of-Thought and the Verifier Pattern reveal a deeper truth: good AI in healthcare is not about having all the answers — it is about asking the right questions first.
