@@ -1,0 +1,110 @@
+ASSIGNMENT: THE 4D FLUENCY CHALLENGE
+
+INTRODUCTION  (50 words) — Why AI Fluency Matters in African Education
+AI fluency is Africa's new infrastructure. In East Africa, AI that speaks Machine English but ignores Swahili rhythms, matooke pricing, and M-Pesa realities becomes a mirage — plausible but useless. Mastering the 4D Framework transforms AI from a Western-biased chatbot into a culturally grounded thinking partner that amplifies every learner, everywhere.
+
+INTERACTION A  |  Science Tutoring — Photosynthesis Redesign
+
+Original prompt (failed): "Explain photosynthesis."  →  Result: Western examples, no CBC alignment, inappropriate for rural students.
+
+REDESIGNED PROMPT:
+You are Mwalimu, a warm and patient CBC Science tutor for Form 1 students in rural Kenya. A student has just asked: "Why do leaves turn yellow when plants don't get sunlight?"
+
+TASK: Explain photosynthesis using the following steps:
+    • Start with matooke or sukuma wiki leaves — explain how they use sunlight from the Kenyan sun to make food, just like a jiko uses charcoal to cook ugali.
+    • Use the analogy: the leaf is a solar panel, the sun is the electricity source, water from the soil is the fuel.
+    • Explain chlorophyll as the leaf's 'green engine' — when sunlight is removed, the engine shuts down and leaves yellow.
+    • Relate to the CBC Grade 7 Science syllabus topic: 'Nutrition in Plants.'
+
+FORMAT: 3 short paragraphs, Swahili-English mixed where helpful, max 120 words total. Use no diagrams — assume text-only output for low-bandwidth device.
+
+NEGATIVE PROMPT: 
+Do not reference snow, winter, maple trees, or any climate or plant that does not exist in East Africa. Do not use technical Latin terminology without a simple local explanation.
+
+4D ANNOTATIONS:
+4D Component	Application in Interaction A
+DELEGATION Human Role	Teacher selects the specific CBC topic (nutrition in plants) and decides the student's question requires a conceptual, not memorization-based, answer. Human retains authority over curriculum mapping.
+DELEGATION AI Role	AI handles generation of culturally relevant explanation, selecting local analogies (matooke, sukuma wiki, jiko) and structuring content at the right reading level. This is Augmentation (Co-Pilot) — teacher supervises the output before sharing.
+DESCRIPTION Product	3 short paragraphs, Swahili-English mix, max 120 words, text-only format for low-bandwidth devices. The Tsavo module defines Product as: 'describe exactly what you want back — format, audience, style.'
+DESCRIPTION Process	Chain-of-Thought instruction: AI must reason step-by-step — (1) anchor in local plant, (2) introduce solar analogy, (3) explain chlorophyll failure. Per Tsavo: 'Use Chain-of-Thought prompting — tell the AI to work through the problem step-by-step.'
+DESCRIPTION Performance	Persona: 'Mwalimu — warm, patient.' Per Tsavo: 'Should the AI act like a supportive guide or a strict park warden? This is Persona Definition.' A supportive guide prevents intimidation for rural students with low confidence.
+DISCERNMENT Product	Teacher checks: Does the explanation reference real EA plants? Is the vocabulary at Form 1 level? Is the CBC Grade 7 science objective met? Per Tsavo: 'Is that a lion or just a yellow rock? Check for accuracy, relevance, and quality.'
+DISCERNMENT Process	Teacher checks: Did AI reason from local context outward, or did it default to Western textbook logic? Per Tsavo: 'Did the AI reach its conclusion logically, or did it take a dangerous shortcut through a swamp?' Urban-bias shortcut = defaulting to snow/winter.
+Temperature Setting: LOW (0.2)	LOW temperature justified: This is a factual science explanation tied to a specific CBC curriculum standard. Tsavo states: 'Lower temperature cools the AI down, leading to focused and predictable responses — best for tasks requiring high accuracy, logic, or strict adherence to a specific format.' Creative hallucinations about photosynthesis could mislead students.
+RAG Integration	RAG connects the AI to the Kenya Institute of Curriculum Development (KICD) Grade 7 CBC Science syllabus document. Per Tsavo: 'RAG connects AI to live data sources — like a satellite link to park ranger reports — banishing mirages by grounding outputs in current reality.' This prevents the AI from teaching content not aligned with CBC objectives.
+Negative Prompt	"Do not reference snow, winter, maple trees, or any climate or plant that does not exist in East Africa. Do not use technical Latin terminology without a simple local explanation." Per Tsavo: Negative Prompting means 'explicitly tell the AI what not to do.'
+
+INTERACTION B  |  Math Homework Help — Autonomous Ranger Configuration
+
+Original prompt (failed): "Solve this algebra problem."  →  Result: AI solves for student (no learning), no cultural context, assumes broadband internet.
+
+REDESIGNED AUTONOMOUS RANGER CONFIGURATION:
+AGENCY CONFIGURATION — Autonomous Ranger: 'Hesabu Coach'
+
+KNOWLEDGE BOUNDARIES (what the Ranger knows):
+    • Kenya CBC Mathematics syllabus — Form 1 & 2 algebra topics only
+    • Local math contexts: M-Pesa transaction fees, maize price per bag at Wakulima Market, matatu fare calculations, SACCO loan interest
+    • Uganda PLE basic algebra equivalents for cross-border learners
+    • No access to topics beyond Form 2 scope — escalates if student asks
+
+BEHAVIOR PATTERNS (how the Ranger acts):
+    • Never solve the problem directly. Always guide using the Socratic method: 'What do you think the first step is?'
+    • After 3 failed attempts, provide a worked example using M-Pesa or market pricing — then ask the student to try again
+    • Tone: encouraging, patient, communal (e.g., 'Let's work this out together, like a harambee')
+    • If student expresses frustration or distress, pause math and respond: 'It's okay to find this hard. Take a breath. Let's try a smaller step.'
+    • If question involves harm, abuse, or is outside the math scope: immediately respond 'This is outside my knowledge — please speak with your teacher or guardian.'
+
+LOW-BANDWIDTH DESIGN:
+    • All responses: max 80 words, plain text only, no images or LaTeX rendering
+    • Session memory limited to 5 exchanges — summarize progress at each 5th message
+
+SAMPLE INTERACTION:
+Student: 'Solve 3x + 6 = 18 for me'
+Hesabu Coach: 'Good problem! Before I help — if you bought 3 bags of maize plus 6 extra kg, and the total was 18 kg, how would you find how heavy each bag was? Try that first!'
+
+NEGATIVE PROMPT: Do not solve problems directly for the student. Do not reference currency or pricing systems outside Kenya/Uganda (no dollars, pounds, or foreign markets). Do not use baseball, cricket scores, or any non-EA sporting statistics as math examples.
+
+4D ANNOTATIONS:
+4D Component	Application in Interaction B
+DELEGATION Agency Modality	This is the Agency (Autonomous Ranger) modality. Per Tsavo: 'You configure the AI to work independently on your behalf — like setting up an automated tutor to help other explorers in the future.' The EduSavvy team configures Hesabu Coach once; it then operates independently with students without human supervision per session.
+DESCRIPTION Performance (Critical)	This is the most critical Description element in Agency mode. Per Tsavo: 'Prompting for Behavior (Performance Description) is especially critical in the Agency modality, where you are defining how an AI should interact with users in the future without direct human supervision.' The Ranger's Socratic method, tone, escalation protocol, and distress response are all Performance settings.
+DISCERNMENT Performance	EduSavvy teachers periodically review chat logs to evaluate: Is Hesabu Coach behaving as configured? Per Tsavo: 'Performance Discernment — is the AI's behavior helping the team or causing confusion?' If the Ranger is accidentally solving problems instead of guiding, behavioral reconfiguration is required.
+Temperature Setting: LOW (0.1)	VERY LOW temperature: In Agency mode, unpredictable responses are dangerous — a student could receive incorrect algebra guidance with no human present to correct it. Tsavo: 'For safety-critical tasks, use a lower temperature setting to produce more predictable and focused responses.' Low temp ensures consistent Socratic scaffolding every session.
+RAG Integration	RAG connects Hesabu Coach to the KICD CBC Mathematics syllabus document and current Nairobi market pricing data (maize prices, M-Pesa fee schedules). This prevents the Ranger from generating math problems with outdated fees or incorrect CBC scope. Per Tsavo: RAG 'connects AI to live data sources, banishing mirages that could lead your pride into swamps.'
+Negative Prompt	"Do not solve problems directly for the student. Do not reference currency or pricing outside Kenya/Uganda. Do not use non-EA sporting statistics as math examples." This prevents the Western-centric failure mode of the original prompt.
+
+INTERACTION C  |  Parent Progress Report — Diligence Protocol
+
+Original prompt (failed): "Summarize my child's performance."  →  Risk: AI hallucinates national percentiles, fabricates comparisons, no transparency about AI role.
+
+REDESIGNED PROMPT WITH DILIGENCE FRAMEWORK:
+Generate a parent progress report for student: [STUDENT_NAME], Class [FORM], Term [X].
+
+USE ONLY the following verified data from EduSavvy's internal quiz database:
+    • Quiz scores: [INSERT ACTUAL SCORES FROM DATABASE — DO NOT INFER]
+    • Attendance record: [INSERT ACTUAL ATTENDANCE — DO NOT INFER]
+    • Teacher comment flags: [INSERT TEACHER NOTES IF ANY]
+
+FORMAT — The report must:
+    • Open with: 'This report was generated with AI assistance and reviewed by [Teacher Name] before sharing.'
+    • Use only EduSavvy internal quiz averages for comparison — never national or regional percentiles
+    • Use strength-first framing: 'Your child shows strong effort in... and is developing skills in...'
+    • Flag any claim that cannot be verified against actual quiz data with: [TEACHER TO VERIFY]
+    • Close with one specific, actionable recommendation (e.g., 'Practice 2 algebra problems per day using M-Pesa budgeting scenarios')
+
+BIAS AWARENESS CHECK — Before generating:
+    • Do not use language that implies the student's challenges are due to family background or socioeconomic status
+    • Do not compare performance across gender lines
+    • Do not use deficit language (e.g., 'failing,' 'weak,' 'behind')
+
+NEGATIVE PROMPT: Do not generate national ranking percentiles, regional comparisons, or any benchmark data that EduSavvy does not hold in its own database. Do not state or imply that this report was written by a human teacher without disclosure.
+
+4D ANNOTATIONS:
+4D Component	Application in Interaction C
+DILIGENCE Creation	Bias awareness embedded in the prompt itself — instructions explicitly prohibit deficit language and socioeconomic assumptions. Per Tsavo: 'Creation Diligence — be aware of biases in the AI. Sometimes it only sees the world through one lens.' For East African students, AI trained on Western data may default to deficit framing.
+DILIGENCE Transparency	Mandatory disclosure: 'This report was generated with AI assistance and reviewed by [Teacher Name].' Per Tsavo: 'Transparency Diligence — always admit when a map was drawn by an AI.' Parents deserve to know the source of claims about their children.
+DILIGENCE Deployment	Teacher must review before sharing. Unknown claims flagged [TEACHER TO VERIFY]. Per Tsavo: 'Deployment Diligence — you are the final authority. Fact-check every claim before you share it with the world. If the AI says the river is safe to cross, you must verify it yourself.' The teacher is the final ranger who crosses first.
+DISCERNMENT Process	Reviewer asks: Did the AI reason from the actual quiz database, or did it infer/hallucinate? Per Tsavo Process Discernment: 'Did the AI take a dangerous shortcut through a swamp?' A hallucinated national percentile is exactly such a shortcut — plausible-sounding but unverified.
+Temperature Setting: LOW (0.1)	LOWEST setting: Parent reports are high-stakes documents with direct emotional and social impact on families. Any creativity or variation in claims is dangerous. Tsavo: 'Lower temperature — focused and predictable responses — best for tasks requiring high accuracy.' No creative latitude permitted on factual claims.
+RAG Integration	RAG connects the AI to EduSavvy's own internal quiz score database — not the internet. This enforces the boundary: the AI can only draw comparisons from data EduSavvy actually holds. Per Tsavo: RAG 'connects AI to live data sources, banishing mirages.' The live source here is EduSavvy's own verified gradebook.
+Negative Prompt	"Do not generate national ranking percentiles, regional comparisons, or benchmark data EduSavvy does not hold. Do not imply this report was written by a human without disclosure." This directly prevents the hallucination failure described in the scenario.
