@@ -108,3 +108,10 @@ DISCERNMENT Process	Reviewer asks: Did the AI reason from the actual quiz databa
 Temperature Setting: LOW (0.1)	LOWEST setting: Parent reports are high-stakes documents with direct emotional and social impact on families. Any creativity or variation in claims is dangerous. Tsavo: 'Lower temperature — focused and predictable responses — best for tasks requiring high accuracy.' No creative latitude permitted on factual claims.
 RAG Integration	RAG connects the AI to EduSavvy's own internal quiz score database — not the internet. This enforces the boundary: the AI can only draw comparisons from data EduSavvy actually holds. Per Tsavo: RAG 'connects AI to live data sources, banishing mirages.' The live source here is EduSavvy's own verified gradebook.
 Negative Prompt	"Do not generate national ranking percentiles, regional comparisons, or benchmark data EduSavvy does not hold. Do not imply this report was written by a human without disclosure." This directly prevents the hallucination failure described in the scenario.
+
+Reflection
+At Automation level, EduSavvy's AI is a parrot — it repeats static content with no adaptation, producing generic quizzes disconnected from Kenyan reality. 
+Moving to Augmentation transforms the dynamic: teachers and AI co-create, with human judgment filtering cultural relevance and CBC alignment before any student sees content. 
+Outcomes improve because the human's contextual wisdom shapes every interaction. 
+At Agency level, a well-configured Autonomous Ranger — like Hesabu Coach — scales this wisdom to thousands of students simultaneously, maintaining Socratic patience and local relevance 24/7. 
+Each level multiplies impact: Automation saves time, Augmentation improves quality, Agency compounds both at scale.
