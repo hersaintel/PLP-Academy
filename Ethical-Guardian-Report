@@ -1,5 +1,3 @@
-In African fintech, ethics is not optional — it is infrastructure. When AI determines who accesses capital, algorithmic bias becomes economic exclusion at scale. For FinSoko's informal traders — Mama Mboga vendors, boda boda drivers, and smallholder farmers — a wrongful denial is not a statistic; it is a season's harvest lost, a child's school fees unpaid, a family's dignity eroded. Across East Africa, where 80% of employment is informal and financial systems were designed for formal-sector workers, responsible AI is the difference between technology that liberates and technology that extracts. This report embeds ethics into every layer of FinSoko's architecture.
-
 FRAMEWORK A	ETHOS + TRACK: Bias Diagnosis & Ethical Underwriting
 
 TRACK Framework: Bias Diagnosis in FinSoko's Credit Model
@@ -26,14 +24,12 @@ FinSoko Data Stewardship Charter — OASIS Protocol
 OASIS Component	FinSoko Data Stewardship Charter
 O — Opt-in by Design	Consent is collected in Swahili and Dholuo before any data is processed. A plain-language SMS reads: 'FinSoko itatumia miamala yako ya M-Pesa kwa miezi 6 tu, kwa ajili ya mkopo wako. Jibu NDIO kukubali au HAPANA kukataa.' (FinSoko will use your M-Pesa transactions for 6 months only, for your loan. Reply YES to accept or NO to decline.) No opt-in = no application processed.
 A — Anonymization	K-anonymity (k≥5) applied to all transaction pattern data before model training. Names, phone numbers, and GPS coordinates are stripped at point of entry. No individual borrower can be re-identified from symptom or repayment patterns in the dataset.
-S — Sovereignty First	All FinSoko member data is stored on servers physically located within Kenya (Nairobi Data Centre, Westlands) and Uganda (NITA-U certified facilities, Kampala), compliant with Kenya DPA 2022 Section 25 and Uganda Data Protection Act 2019 Section 19. The Silicon Valley partnership is rejected until a data residency agreement is signed.
+S — Sovereignty First	All FinSoko member data is stored on servers physically located within Kenya and Uganda compliant with Kenya DPA 2022 Section 25 and Uganda Data Protection Act 2019 Section 19. The Silicon Valley partnership is rejected until a data residency agreement is signed.
 I — Intentional Retention	Transaction data is auto-deleted 90 days after loan closure. Non-essential metadata (call logs, app session data) is purged within 30 days. A data minimisation register is maintained and audited quarterly by the DPA-appointed Data Protection Officer.
 S — Security as Ritual	End-to-end encryption using Signal Protocol, optimised for USSD and 2G networks prevalent in Northern Uganda and rural Kenya. All staff complete monthly data security training. Encryption is treated as a core operational value, not a compliance checkbox.
 
 Regulatory Anchors: Kenya Data Protection Act 2022 (Sections 25, 31, 46); Uganda Data Protection and Privacy Act 2019 (Sections 13, 19, 26); NITA-U data residency standards. The Silicon Valley partnership proposal is rejected pending execution of a data residency and sovereignty agreement. All future partnerships must include an African Data Stewardship clause co-signed by FinSoko's Data Protection Officer.
 Real-World Mitigation Tactic: Consent scripts are field-tested with Mama Mboga vendors at Gikomba Market, Nairobi, and boda boda cooperatives in Gulu before deployment — ensuring literacy-appropriate language and genuine informed consent beyond checkbox compliance.
-
-
 
 FRAMEWORK C	PRIDE Loop + HORIZON Scan: Human Oversight & Long-Term Impact
 
