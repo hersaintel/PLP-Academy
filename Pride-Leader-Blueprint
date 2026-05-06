@@ -1,0 +1,38 @@
+Agent 1 — Scout Agent (Market Intelligence)
+Framework: RANK  |  Tool: LangGraph
+RANK Dimension	Specification
+Role	Price advisory only. Pulls live maize and coffee prices from Rwanda Agricultural Board API and Uganda Commodity Exchange. Max 3 SMS per farmer per day via USSD gateway.
+Authority	Cannot initiate contracts, book transport, or move funds. Recommends price ranges only. Farmer's sell/hold decision is always final.
+Notification	Alert Guardian Agent when: (a) intraday price volatility >20%; (b) contract volume ≥500 kg signed; (c) buyer credit score fails M-Pesa Tathmini check.
+Kill Switch	USSD code *#700# held by field officers. Instantly suspends all outbound SMS and freezes API polling. Reactivation requires human confirmation.
+Safety & Learning
+    • GUARD Rail: Block any price recommendation using gender, ethnicity, or land-ownership proxies as scoring variables.
+    • CYCLE Engine: Log weekly SMS acceptance rate (target ≥40%). If missed, auto-propose revised price-band to human supervisor for approval before next deployment.
+
+Agent 2 — Guardian Agent (Logistics Coordinator)
+Framework: TRAIL  |  Tool: Microsoft Autogen
+TRAIL Dimension	Specification
+Transient	Session-scoped: current booking reference, truck ID, route ETA (SafeBoda Logistics API), and road-condition flag (Uganda National Roads Authority live feed). Cleared on booking completion.
+Relational	Opt-in only via USSD *7733#. Stores farm GPS polygon, preferred truck type, and harvest-season window. No PII stored before explicit consent.
+Archival	Anonymised route-success rates by district and season. Never linked to individual farmer IDs. Auto-deleted after 24 months per Uganda DPA §23.
+Inheritance	Passes to Hunter Agent: verified road condition, truck availability, confirmed ETA only. Raw chat history and PII are stripped before every inter-agent payload.
+Land Rights	All data stored on AWS Africa (Cape Town) af-south-1. Compliant with Uganda DPA 2019 and Rwanda Law No. 058/2021. No data leaves continental Africa.
+Safety & Learning
+    • GUARD Rail: Immutable audit log of every truck booking — input features, route chosen, road-condition flag state. Farmer can request full log via USSD within 30 days.
+    • CYCLE Engine: Capture % of delayed deliveries caused by road-data mismatch (target <15%). Every Sunday 2 AM EAT, propose rerouting rules; human logistics manager approves before activation.
+
+Agent 3 — Hunter Agent (Human-in-Loop Liaison)
+Framework: HUNT  |  Tool: CrewAI
+HUNT Dimension	Specification
+Handoff Triggers	Activates when Scout passes a signed contract ≥500 kg AND Guardian confirms truck availability. If either condition is unmet, Hunter re-polls every 15 min for up to 4 hours, then escalates to human.
+Unified Context	Shared Google Sheet (real-time): Contract Price (UGX/kg), Freight Cost/kg, Remaining Margin %, Road Condition Flag, Buyer Credit Status. All three agents write; Hunter reads and synthesises before generating briefing.
+Negotiation Rules	If Freight Cost >30% of Contract Price, Hunter flags a margin breach. No agent may proceed. Briefing auto-escalated to human logistics manager via WhatsApp Business API.
+Termination	Workflow complete when: human approves via /approve-logistics SMS, truck departs with GPS confirmation, buyer receives tracking link. Any timeout triggers full human takeover — no silent failure.
+Safety & Learning
+    • GUARD Rail: Dignity filter blocks any briefing containing terms such as 'unreliable farmer' or 'risky route' without actionable evidence. All human-facing outputs must be empathetic and specific.
+    • CYCLE Engine: Track contract-to-approval time (target <2 hours). Weekly insight report proposed to Head of Operations; revised briefing templates approved before deployment.
+
+Reflection — Preserving Human Sovereignty
+Every autonomous action in this pride has a ceiling it cannot breach without a human key. Kill switches are held by field officers — not software flags — making override physical and deliberate. 
+Approval gates are mandatory, not advisory, for cross-border logistics, margin-breach scenarios, and all CYCLE Engine parameter changes. Farmers retain full data ownership: opt-in relational memory, downloadable audit logs, and deletion on request. The agents accelerate decisions; humans make the final ones. 
+Autonomy is calibrated like rainfall — enough to grow, never enough to flood.
