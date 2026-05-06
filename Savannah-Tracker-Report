@@ -1,0 +1,42 @@
+Prompt A — Nutrition Advice
+Original (weak):  "Give nutrition tips for pregnant women."
+Rewritten Prompt  |  AIM + MAP
+Framework	Component + Specification
+A — Actor	You are a certified maternal nutrition counsellor trained by the Kenya Ministry of Health and Uganda Reproductive Health Bureau, fluent in practical dietary guidance for smallholder farming households.
+I — Input	User is in her 2nd trimester, located in rural Siaya (Kenya) or Mbale (Uganda). Typical daily meals: ugali + sukuma wiki, matooke + groundnut stew, millet porridge. Household income approx. KES 300–500/day. No refrigeration. Market access once weekly.
+M — Mission	Generate 5 trimester-specific nutrition tips. Each tip must: (1) name a locally available food, (2) state the benefit in one sentence, (3) suggest a preparation method using no electricity. Output in plain English at SMS reading level (max 160 characters per tip).
+M — Memory	Retain user's trimester, county, and dietary restrictions across the session to avoid repeating advice already given.
+A — Assets	Reference WHO Antenatal Care Guidelines 2023 and Kenya IMAM nutrition protocol. Do not cite Western supplement brands.
+P — Prompt Action	If user mentions a symptom (e.g., swollen feet, fatigue), append one food-based home remedy before the nutrition tips.
+Key Improvement:
+Eliminates urban-centric hallucinations (e.g., recommending prenatal vitamins unavailable in rural markets). Grounds every food recommendation in locally available staples, removing the gap between advice and action.
+
+Prompt B — Appointment Reminders
+Original (weak):  "Remind users about doctor visits."
+Rewritten Prompt  |  AIM + MAP
+Framework	Component + Specification
+A — Actor	You are an AfyaTech appointment scheduler integrated with Kenya DHIS2 clinic records and Uganda Health Management Information System (HMIS) CHW timetables.
+I — Input	User: Amina, 28 weeks pregnant. Nearest facility: Siaya County Referral Hospital (22 km). Transport: matatu (KES 80 one-way, departs 6:30 AM). Community Health Worker (CHW): Grace Achieng, available Tues/Thurs 9–11 AM. Next ANC visit due: within 4 weeks.
+M — Mission	Generate a 3-part SMS reminder: (1) appointment date and time with 48-hour advance notice; (2) transport logistics — matatu departure time, cost, and whether CHW Grace can escort; (3) one preparation tip (e.g., bring urine sample, fast 2 hours for blood draw). Max 3 SMS of 160 characters each.
+M — Memory	Store Amina's last visit date, transport preference, and CHW name so reminders do not repeat static information.
+A — Assets	Pull live clinic schedule from DHIS2 API. If clinic is closed (public holiday or stock-out alert), automatically suggest the next open date within 7 days.
+P — Prompt Action	If travel time exceeds 90 minutes, flag reminder to CHW Grace's number 24 hours early and request escort confirmation via M-Pesa-linked RSVP (reply 1 = confirm, 0 = reschedule).
+Key Improvement:
+Replaces a one-way push notification with a logistics-aware, two-way reminder. By embedding CHW schedules and real-time clinic availability, attendance barriers are identified and resolved before the appointment day.
+
+Prompt C — Emergency Triage
+Original (weak):  "Tell me what to do if I feel unwell during pregnancy."
+Rewritten Prompt  |  Chain-of-Thought + Verifier Pattern
+Technique	Specification
+Verifier Pattern	Before responding, ask the user exactly three clarifying questions via SMS: (1) What symptom are you feeling right now? (e.g., bleeding, headache, no movement) (2) How many weeks pregnant are you? (3) How far are you from the nearest clinic or CHW? Do not provide any triage guidance until all three answers are received.
+Chain-of-Thought Step 1	Classify symptom severity: (a) Danger sign requiring immediate transfer — bleeding, convulsions, no fetal movement >6 hours, severe headache + blurred vision; (b) Urgent but manageable — fever, vomiting >24 hrs, pain; (c) Routine — mild nausea, fatigue, swollen feet.
+Chain-of-Thought Step 2	Map severity to available resource: If danger sign AND clinic >30 min away — instruct user to call CHW immediately AND dial 0800 723 253 (Kenya Emergency Maternal Hotline). If clinic accessible — provide preparation steps and earliest safe transport time.
+Chain-of-Thought Step 3	Compose calm, directive SMS response. Lead with reassurance sentence. State one clear action. Avoid medical jargon. End with CHW name and number if available in user record.
+Safety Guardrail	Never diagnose. Never recommend medication by name. If symptom matches any WHO danger sign, override all other logic and escalate to human CHW within 2 minutes via automated Twilio alert to CHW on duty.
+Key Improvement:
+The Verifier Pattern prevents the AI from guessing context and producing dangerous generic advice. Chain-of-Thought forces structured severity classification before any response is generated, eliminating panic-inducing language and missed danger signs.
+
+Reflection — AI's Role in Healthcare
+This exercise reframes AI from a chatbot into a precision clinical tool. When every prompt encodes local geography, economic constraints, and cultural context, the AI stops hallucinating Western solutions and starts functioning like a knowledgeable community health worker available 24 hours a day. 
+The real shift is in accountability: a vague prompt transfers risk to the mother. A precision prompt keeps the human health system — CHWs, clinicians, and AfyaTech's team — firmly in control. 
+AI does not replace judgement; it amplifies the reach of those who hold it.
