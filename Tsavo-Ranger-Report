@@ -1,0 +1,44 @@
+Interaction A — Science Tutoring
+Original (weak):  "Explain photosynthesis."
+4D Redesign
+4D Component	Specification
+Delegation (Human vs AI)	Human teacher: selects local analogy (matooke ripening, sugarcane growth) and approves final explanation. AI: generates step-by-step process explanation, produces a Swahili-English bilingual glossary of key terms, and suggests a low-cost classroom experiment using locally available leaves.
+Description Product	Output: two-paragraph explanation (max 120 words) at Kenya CBC Grade 8 reading level. Must include one named local plant (e.g., cassava, maize, neem). Include a 4-row summary table: Stage | Input | Output | Local Example.
+Description Process	Chain-of-Thought: (1) Define light energy capture using sunlight in a maize field. (2) Explain chlorophyll role using the green colour of sukuma wiki leaves. (3) Describe glucose production as the sugar that makes sugarcane sweet. (4) Conclude with oxygen release linking to fresh air near forests.
+Description Performance	Persona: Supportive secondary-school science teacher who uses simple Kiswahili phrases (e.g., 'Kumbuka' = Remember) to signal key points. Encouraging, never condescending. Assumes no prior biology vocabulary.
+Discernment	AI output reviewed against Kenya Institute of Curriculum Development (KICD) Biology Syllabus Grade 8 before delivery. Flag any output referencing non-East-African flora (e.g., maple, oak) for human review.
+Negative Prompting	Do NOT use examples involving snow, autumn leaves, or temperate-zone plants. Do NOT exceed Grade 8 vocabulary without defining the term immediately after.
+Temperature	Low (0.2) — factual accuracy is critical. Science content must be consistent and curriculum-aligned, not creative.
+RAG Linkage	Retrieval source: KICD Biology Syllabus 2024 PDF + Uganda National Curriculum Development Centre (NCDC) PLE Science guide. RAG prevents hallucinated facts about photosynthesis stages not in the prescribed curriculum.
+
+Interaction B — Math Homework Help
+Original (weak):  "Solve this algebra problem."
+4D Redesign — Agency Modality (Autonomous Ranger)
+4D Component	Specification
+Delegation (Agency Config)	AI operates autonomously as an always-on math tutor. It never simply gives the answer. It guides via Socratic questioning in 3 steps: (1) restate the problem in local context, (2) ask the student to identify the unknown variable, (3) reveal the method only after the student attempts Step 2.
+Description Product	For each problem: one worked example using an M-Pesa transaction or a maize-bag weight scenario. Step-by-step solution with each line explained in plain English. Final answer clearly labelled. Max 5 steps per solution.
+Description Process	Autonomous Ranger behaviour: detect student's CBC level from their submission (Form 1–4). Adjust complexity automatically. If three consecutive wrong attempts detected, reduce to simpler sub-problem and escalate flag to teacher dashboard.
+Description Performance	Persona: Patient peer-tutor, not an examiner. Uses phrases like 'Good try — let us look at this together.' Never marks a response 'wrong' without offering the next step. Supports low-bandwidth: responses under 300 characters by default; full solution sent only on request.
+Discernment	Knowledge boundary: AI handles only algebra, arithmetic, and geometry within KCSE/PLE scope. Any calculus or advanced statistics query is redirected to the teacher with a note: 'This is beyond our current topic — your teacher can guide you.'
+Negative Prompting	Do NOT solve the full problem in the first response. Do NOT use currency other than KES or UGX. Do NOT reference Western brand names (e.g., Walmart, Amazon) in word problems.
+Temperature	Medium (0.5) — needs consistency in method steps but slight flexibility to vary local context examples (different M-Pesa amounts, different crop weights) to keep problems fresh.
+RAG Linkage	Retrieval sources: KNEC KCSE Past Papers 2019–2024 + UNEB PLE Mathematics Past Papers. RAG ensures problem formats and difficulty levels match what students will face in national exams, preventing irrelevant question styles.
+
+Interaction C — Parent Progress Report
+Original (weak):  "Summarize my child's performance."
+4D Redesign — Diligence-First
+4D Component	Specification
+Delegation	AI generates draft report from verified quiz scores and engagement logs. Human teacher reviews and approves before delivery. Report is never sent directly to parent without teacher sign-off — teacher is the final authority (Deployment Diligence).
+Description Product	Structured SMS/WhatsApp report (max 250 words): (1) Three subjects with actual percentage scores from the gradebook. (2) One observed strength with a specific example. (3) One improvement area with a concrete next step. (4) Attendance rate. Language: plain English or Kiswahili on request.
+Description Process	Chain-of-Thought: (1) Pull verified scores from EduSavvy gradebook API — do not estimate. (2) Identify highest and lowest scoring subjects. (3) Cross-reference engagement logs (sessions completed, time on task). (4) Draft strength and improvement statements. (5) Flag any discrepancy between AI summary and raw scores for human review.
+Diligence (Bias Awareness)	Creation Diligence: AI must not infer student ability from name, school location, or device type. Report must be identical in structure and tone regardless of whether student is in Nairobi or rural Turkana. Bias check: run summary against all-student average before delivery.
+Diligence (Transparency)	Report footer must read: 'This summary was generated by EduSavvy AI and reviewed by [Teacher Name] on [Date]. Scores are drawn directly from the EduSavvy gradebook.' Parent must know AI's role.
+Discernment	Fact-check gate: if AI-generated percentage for any subject differs from gradebook record by more than 1%, block report and alert teacher. No report is delivered with unverified figures.
+Negative Prompting	Do NOT use subjective labels such as 'bright,' 'lazy,' or 'struggling.' Do NOT infer home environment or parental support from performance data. Do NOT compare the student to named peers.
+Temperature	Very low (0.1) — parent reports are factual documents. Zero creative variation acceptable. Every report must be reproducible from the same input data.
+RAG Linkage	Retrieval source: EduSavvy live gradebook database (quiz scores, attendance). RAG eliminates hallucinated performance claims — every figure in the report is grounded in a real database record, not AI estimation.
+
+Reflection — Automation to Agency
+Automation answers questions. Augmentation thinks alongside students. Agency reshapes how learning happens — even when no teacher is present. 
+This progression matters most in rural East Africa, where one teacher may serve 80 students. A well-configured Autonomous Ranger tutor does not replace that teacher; it multiplies her reach. 
+The shift also changes student outcomes from passive receipt of answers to active reasoning, from a single curriculum voice to one calibrated for CBC and PLE, and from reports that guess at performance to documents anchored in verified data. The 4D framework makes AI a ranger that knows the terrain — not a tourist that misreads it.
